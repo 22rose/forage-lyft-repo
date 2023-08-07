@@ -1,0 +1,31 @@
+1) Adding a new part is as simple as creating a new
+class which implements the given interface with a needs_service(method): 
+for example if i want
+to create a new engine part, i create a class that implements engine 
+
+2) Modifying the behavior of a part for all cars which
+contain that part can be accomplished by modifying a
+single piece of code: for example, if i want to change the criteria
+for a sternman engine, i can just go directly into sternman engine class
+
+3)Adding additional types of parts to the service criteria
+can be accomplished by following the pattern set forth
+by Engine and Battery: for example, like how we added a tire as a 
+a new type of part: we create a Tire interface and then implemented
+concrete classes of the various types of tires
+
+4)Cars are created by calling the corresponding create method on
+CarFactory: for example, I can create a new type of car
+directly in the car factory class
+
+5)Changing the parts a car is composed of can be accomplished
+by modifying the corresponding create method in CarFactory: 
+for example, if i want to change the engine type of a 
+palindrome car, I can do that directly in car factory 
+
+6) we create a serviceable interface which has the needs_service() method that classes have to implement. The use is that cars are accessed through serviceable, so say in the future we want to add bikes, mopeds, etc, we can still use serviceable
+
+
+ALL IN ALL THESE CHANGES MAKE IT SO IT IS EASY TO ADD NEW PARTS, MODIFY PARTS, 
+ADD NEW TYPES OF PARTS, ADD NEW CARS, MODIFY CARS, ETC WITHOUT REARRANGING
+ENTIRE CODEBASE
